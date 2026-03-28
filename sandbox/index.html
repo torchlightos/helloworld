@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privilege Vault | Sovereign Legal Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:italic,wght@700&display=swap');
+        
+        :root {
+            /* Exact Brand Colors from your Style Guide */
+            --deep-navy: #0A1F44;
+            --brand-gold: #C9A063;
+            --slate-grey: #5F6368;
+            --off-white: #F4F4F4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--deep-navy);
+            color: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        .gold-text { color: var(--brand-gold); }
+        .gold-bg { background-color: var(--brand-gold); }
+        .navy-bg { background-color: var(--deep-navy); }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #C9A063 0%, #e5c38d 50%, #a67c45 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .serif-italic {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 160, 99, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            border-color: var(--brand-gold);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-gold {
+            background-color: var(--brand-gold);
+            color: var(--deep-navy);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(201, 160, 99, 0.2);
+        }
+
+        .btn-gold:hover {
+            background-color: #e5c38d;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(201, 160, 99, 0.3);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 160, 99, 0.2), transparent);
+        }
+
+        .logo-lock {
+            border: 2.5px solid var(--brand-gold);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        #success-message {
+            display: none;
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Success Message -->
+    <div id="success-message" class="bg-white text-[#0A1F44] px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 font-bold border-2 border-[#C9A063]">
+        <i class="fas fa-check-circle text-[#C9A063]"></i>
+        <span>Request Sent. Your Privilege Audit is on the way.</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center relative z-50">
+        <div class="flex items-center gap-4">
+            <!-- Logo implementation from your image -->
+            <div class="relative w-10 h-10 flex items-center justify-center">
+                <div class="absolute inset-0 border-2 border-[#C9A063] rounded-lg rotate-45"></div>
+                <i class="fas fa-lock text-[#C9A063] text-sm relative z-10"></i>
+            </div>
+            <div class="flex flex-col leading-none">
+                <span class="text-xl font-bold tracking-tight text-white uppercase">PRIVILEGE<span class="text-[#C9A063]">VAULT</span></span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-[#5F6368] font-semibold">Legal Security</span>
+            </div>
+        </div>
+        <div class="hidden lg:flex items-center gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-[#5F6368]">
+            <a href="#audit" class="hover:text-[#C9A063] transition-colors">Risk Audit</a>
+            <a href="#heppner" class="hover:text-[#C9A063] transition-colors italic">Heppner Box</a>
+            <a href="#compliance" class="hover:text-[#C9A063] transition-colors">Compliance</a>
+            <button class="border border-[#C9A063] text-[#C9A063] px-6 py-2 rounded-full hover:bg-[#C9A063] hover:text-[#0A1F44] transition-all">
+                Login
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-5xl mx-auto px-6 pt-24 pb-32 text-center relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20">
+             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#C9A063] blur-[140px] rounded-full"></div>
+        </div>
+
+        <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 mb-10">
+            <i class="fas fa-shield-check text-[#C9A063] text-xs"></i>
+            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C9A063]">U.S. v. Heppner Compliant</span>
+        </div>
+        
+        <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] mb-10">
+            AI PRIVILEGE <br> IS DEAD.
+        </h1>
+        
+        <p class="text-xl md:text-2xl serif-italic gold-gradient-text italic mb-12">
+            Reclaim Your Sovereignty.
+        </p>
+        
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-16 font-light">
+            Cloud AI usage waives attorney-client privilege. <br>The <strong>Heppner Box™</strong> by Privilege Vault is the only air-gapped solution that restores legal privacy through hardware sovereignty.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="#audit" class="btn-gold px-10 py-5 rounded-xl font-extrabold text-sm uppercase tracking-widest flex items-center justify-center gap-3">
+                Get the 2026 Risk Audit <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#heppner" class="bg-white/5 border border-white/10 text-white px-10 py-5 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+                The S-1 Hardware
+            </a>
+        </div>
+    </header>
+
+    <div class="section-divider"></div>
+
+    <!-- The Product Focus (Heppner Box) -->
+    <section id="heppner" class="max-w-7xl mx-auto px-6 py-32">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
+            <div class="relative order-2 lg:order-1">
+                <!-- Visual representation of the Table you uploaded -->
+                <div class="absolute -inset-4 bg-[#C9A063]/10 blur-2xl rounded-full"></div>
+                <div class="relative glass-card p-10 rounded-[2.5rem] shadow-2xl">
+                    <div class="flex justify-between items-center mb-12">
+                        <h3 class="text-2xl font-bold text-white tracking-tight italic">Heppner Box <span class="text-[#C9A063]">v.</span> Cloud</h3>
+                        <span class="px-4 py-1 bg-[#C9A063]/10 text-[#C9A063] text-[10px] font-bold rounded-full border border-[#C9A063]/20 uppercase tracking-widest">Sovereign Mode</span>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex justify-between border-b border-white/5 pb-4">
+                            <span class="text-xs uppercase tracking-widest text-[#5F6368] font-bold">Feature</span>
+                            <span class="text-xs uppercase tracking-widest text-[#5F6368] font-bold">Cloud AI</span>
+                            <span class="text-xs uppercase tracking-widest text-white font-bold">Heppner Box</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold">Legal Privilege</span>
+                            <span class="text-sm text-red-500 font-bold">WAIVED</span>
+                            <span class="text-sm text-green-500 font-bold flex items-center gap-2 italic">100% Protected <i class="fas fa-check-circle"></i></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold">Connectivity</span>
+                            <span class="text-sm text-slate-500 italic">Always Online</span>
+                            <span class="text-sm text-white font-bold">Air-Gapped</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-semibold">Context Memory</span>
+                            <span class="text-sm text-slate-500 italic">Variable</span>
+                            <span class="text-sm text-white font-bold">TurboQuant 6X</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-10 order-1 lg:order-2">
+                <div class="space-y-4">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight uppercase tracking-tighter">The Physical <br><span class="text-[#C9A063]">Fortress.</span></h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">The Heppner Box (Model S-1) is the flagship hardware for the Privilege Vault ecosystem. It is a dedicated, high-performance appliance that lives in your office—not a data center.</p>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i class="fas fa-power-off text-[#C9A063] mb-4 text-xl"></i>
+                        <h4 class="font-bold text-white mb-2">Hardware Kill-Switch</h4>
+                        <p class="text-xs text-slate-500">Physical disconnection of Wi-Fi/Bluetooth hardware.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
+                        <i class="fas fa-print text-[#C9A063] mb-4 text-xl"></i>
+                        <h4 class="font-bold text-white mb-2">Integrated Scan</h4>
+                        <p class="text-xs text-slate-500">Sheet-fed ingestion for physical discovery documents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture (The Audit) -->
+    <section id="audit" class="py-32 bg-[#08152e]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Is Your Firm Exposed?</h2>
+            <p class="text-slate-400 mb-12">Identify sensitive client data currently sitting on public servers with our 2026 Privilege Risk Audit.</p>
+            
+            <form onsubmit="handleSubmit(event)" class="glass-card p-4 rounded-2xl flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Professional Email" required class="flex-1 bg-transparent px-6 py-4 outline-none text-white font-medium">
+                <button type="submit" class="btn-gold px-10 py-4 rounded-xl font-extrabold text-xs uppercase tracking-widest whitespace-nowrap">
+                    Download Audit PDF
+                </button>
+            </form>
+            <p class="text-[9px] text-[#5F6368] uppercase tracking-[0.4em] mt-8 font-bold">Privilege Protocol S-100 Verified</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 bg-[#071328]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+            <div class="flex items-center gap-4 mb-10 opacity-50 grayscale">
+                 <div class="relative w-8 h-8 flex items-center justify-center">
+                    <div class="absolute inset-0 border-2 border-[#C9A063] rounded rotate-45"></div>
+                    <i class="fas fa-lock text-[#C9A063] text-[10px] relative z-10"></i>
+                </div>
+                <span class="text-sm font-bold tracking-tight text-white uppercase italic">PRIVILEGE<span class="text-[#C9A063]">VAULT</span></span>
+            </div>
+            <p class="text-[10px] text-[#5F6368] uppercase tracking-[0.2em] font-bold text-center">
+                © 2026 Privilege Vault Legal Security Solutions • Air-Gapped Standard 1.2A
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('success-message');
+            msg.style.display = 'flex';
+            setTimeout(() => {
+                msg.style.opacity = '0';
+                setTimeout(() => { msg.style.display = 'none'; msg.style.opacity = '1'; }, 1000);
+            }, 4000);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
+
